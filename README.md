@@ -1,5 +1,5 @@
 # node_todo
-Simple nodejs api to handle four different entities. 
+Simple nodejs api to handle two different entities. 
 - user
 - todo
 ## How to install
