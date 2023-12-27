@@ -23,7 +23,7 @@ todoRouter.delete("/:todoId", async(req,res) =>{
 
 // func 5
 todoRouter.get("/user/all/:id", async(req,res) =>{
-
+    TodController.getUserAllTodos(req,res);
 });
 
 module.exports = todoRouter;
