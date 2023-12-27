@@ -9,15 +9,15 @@ todoRouter.post("/user/:id", async (req,res) =>{
 });
 
 todoRouter.get("/:todoId", async(req,res) =>{
-    TodController.getUserTodo(req,res);
+    TodController.getTodo(req,res);
 });
 
-todoRouter.put("/user/:id", async(req,res) =>{
-
+todoRouter.put("/:todoId", async(req,res) =>{
+    TodController.updateTodo(req, res);
 });
 
-todoRouter.delete("/user/:id", async(req,res) =>{
-
+todoRouter.delete("/:todoId", async(req,res) =>{
+    TodController.deleteTodo(req, res);
 });
 
 
