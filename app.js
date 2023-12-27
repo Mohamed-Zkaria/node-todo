@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express()
@@ -6,6 +7,9 @@ const port = 3000
 const dbUrl = "mongodb://127.0.0.1:27017/nodetodo"
 
 const { TodoRouter } = require('./routes')
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   console.log(`\n\n${new Date().toISOString()}`);
