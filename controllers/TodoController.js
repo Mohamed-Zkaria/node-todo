@@ -96,6 +96,18 @@ TodoController.deleteTodo = async (req, res) => {
 
 TodoController.getUserAllTodos = async (req, res) => {
 
+    userNotFoundMsg = 'User not found';
+
+    let { id } = req.params
+
+    id = new mongoose.Types.ObjectId(id);
+    let user = await UserModel.findById(id);
+    if (!user) {
+        return res.status(404).send({ msg: userNotFoundMsg })
+    }
+
+    todos = await user.populate('todos');
+    return res.status(200).send({todos});
 }
 
 module.exports = TodoController;
